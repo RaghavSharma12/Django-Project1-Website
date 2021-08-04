@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact Us
+{% endblock title %}
+{% block body %}
+<div class="container-fluid py-0 px-0">
+    <img src="/static/imgs/contactimg3.jpg" alt="">
+</div>
+<div class="container text-center my-4">
+    <h1>Contact Us</h1>
+    <form class="row g-3" method="POST" action="/contact" >
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Name</label>
+          <input type="Name" class="form-control" id="inputEmail4" name="name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="inputPassword4" placeholder="abc@gmail.com">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Message</label>
+            <input type="text" class="form-control" id="inputAddress" name="message1" placeholder="Place your Concerns Here">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Message</label>
+            <input type="text" class="form-control" id="Message" name="message2" placeholder="More If any">
+        </div>
+        <div class="col-md-6"> 
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" name="city" id="inputCity">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">state</label>
+            <select id="inputState" name="state" class="form-select">
+                <option selected>Choose...</option>
+                <option>Delhi</option>
+                <option>Punjab</option>
+                <option>Uttar Pradesh</option>
+                <option>Himachal Pradesh</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" class="form-control" name="zip" id="inputZip">
+        </div> 
+       
+         {% comment %} <div class="col-md-6 my-10">
+            <label for="Message" class="form-label">Message</label> <p></p>
+          <textarea name="Message" id="" cols="85" rows="10"></textarea>
+        </div> --> {% endcomment %}
+        <div class="col-12">
+            {% comment %} <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="checkbox" id="gridCheck">
+            I am adult 18+ please
+            (Check the check-box If Applicable)
+          </div>
+         {% endcomment %}
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Form</button>
+        </div>
+      </form>
+</div>
+{% endblock body %}
